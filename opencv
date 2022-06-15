@@ -1,0 +1,46 @@
+import cv2
+filepath =".jpg"
+image = cv2.imread(filepath,1)
+cv2.imshow("",image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
+while True:
+        print("Options: [1]User Path [2]Main Path: ")
+        choice = int(input(" Choices :"))
+
+        if choice == 1:
+                import user
+                break
+
+        elif choice == 2:
+            import main
+            break
+
+        else:
+            print("Invalid input......................")
+
+
+import cv2
+import os
+
+while True:
+	Fname = input("Name of your file[add '.jpg' at the end]:")
+	flag = input("\n Press[1] for colored image or [0] for gray image:")
+		
+	if os.path.exists(Fname) and flag == '1':
+		imge= cv2.imread(Fname, 1)
+		cv2.imshow(Fname, imge)
+		cv2.waitKey(0)
+		cv2.destroyAllWindows()
+		break
+	
+	elif os.path.exists(Fname) and flag == '0':
+		imge= cv2.imread(Fname, 0)
+		cv2.imshow(Fname, imge)
+		cv2.waitKey(0)
+		cv2.destroyAllWindows()
+		break
+
+	else:
+		print(" File name is invalid......................")
